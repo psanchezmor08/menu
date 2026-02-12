@@ -4,8 +4,7 @@ services:
   panel-control:
     build: .
     container_name: streamlit_menu
+    network_mode: "bridge" # Asegura conectividad estándar
     ports:
       - "8504:8504"
     restart: unless-stopped
-    volumes:
-      - .:/app
