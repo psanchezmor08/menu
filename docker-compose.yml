@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  panel-control:
+    build: .
+    container_name: streamlit_menu
+    ports:
+      - "8504:8504"
+    restart: unless-stopped
+    volumes:
+      - .:/app
