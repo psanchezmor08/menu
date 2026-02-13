@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 # =====================================================
 # Se actualiza el icono de la página con la ruta exacta
 st.set_page_config(
-    page_title="Consola de Gestión", 
+    page_title="Panel de control ADA", 
     page_icon="diseño/ada-icono (1).png",  
     layout="wide"
 )
@@ -72,7 +72,7 @@ except Exception:
     st.warning("No se pudo cargar la imagen. Comprueba que la ruta 'diseño/ADA-vc-color (1).png' es correcta.")
 
 # Títulos
-st.markdown("<h1 style='text-align: center;'>🚀 Panel de Control Central</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Panel de Control ADA</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Selecciona la herramienta que deseas abrir</p>", unsafe_allow_html=True)
 st.write("---")
 
@@ -101,7 +101,7 @@ if st.button("📂 INVENTARIO", use_container_width=True):
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-if st.button("📊 RPT (ADJUN)", use_container_width=True):
+if st.button("📊 RPT ", use_container_width=True):
     redirigir("http://10.162.130.164:8503")
 
 # =====================================================
@@ -110,4 +110,5 @@ if st.button("📊 RPT (ADJUN)", use_container_width=True):
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.write("---")
 st.caption("Conectado al nodo Proxmox: 10.162.130.164")
+
 
