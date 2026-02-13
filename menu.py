@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 # =====================================================
 # CONFIGURACIÓN INICIAL
 # =====================================================
-st.set_page_config(page_title="Panel de Gestión ADA", page_icon="diseño/logo-icono.png", layout="wide")
+st.set_page_config(page_title="Panel de Gestión ADA", page_icon="diseño/logo-icono.png (1)", layout="wide")
 
 # =====================================================
 # GESTIÓN DE CSS GLOBAL
@@ -127,4 +127,5 @@ with col2:
 
 st.write("---")
 st.caption("Conectado al nodo Proxmox: 10.162.130.164")
+
 
