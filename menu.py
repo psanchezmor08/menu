@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 # Se actualiza el icono de la página con la ruta exacta
 st.set_page_config(
     page_title="Consola de Gestión", 
-    page_icon="diseño/ada-icono (1).png",  
+    page_icon="diseño/ada-icono (1).jpg",  
     layout="wide"
 )
 
@@ -31,7 +31,7 @@ def cargar_estilos_css():
     
     .main { padding: 2rem; }
     
-    /* Ajuste de botones del panel central */
+    /* Ajuste de botones del panel central: Centrados y alargados por toda la pantalla */
     div.stButton > button:first-child {
         height: 150px !important;
         width: 100% !important;
@@ -42,7 +42,9 @@ def cargar_estilos_css():
         color: white !important;
         transition: 0.3s !important;
         border: none !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra para resaltar los botones */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin: 0 auto !important;
+        display: block !important;
     }
     div.stButton > button:hover {
         background-color: var(--verde-hover) !important;
@@ -64,7 +66,7 @@ cargar_estilos_css()
 try:
     c1, c2, c3 = st.columns([1, 2, 1]) # La columna central es más ancha para la imagen
     with c2:
-        st.image("diseño/ADA-vc-color (1).jpg", use_container_width=True)
+        st.image("diseño/ADA-vc-color (1).png", use_container_width=True)
 except Exception:
     # Si por algún motivo no encuentra la ruta exacta, muestra un aviso
     st.warning("No se pudo cargar la imagen. Comprueba que la ruta 'diseño/ADA-vc-color (1).png' es correcta.")
@@ -80,39 +82,27 @@ def redirigir(url):
     components.html(f"<script>{js}</script>", height=0)
 
 # =====================================================
-# BOTONES EN FORMATO ESCALONADO (ZIG-ZAG)
+# BOTONES ALARGADOS (100% ANCHO) Y CENTRADOS
 # =====================================================
 st.markdown("<br>", unsafe_allow_html=True)
 
-# 1. PEMA (Izquierda)
-col1_1, col_esp1, col2_1 = st.columns([1, 0.1, 1])
-with col1_1:
-    if st.button("📄 PEMA"):
-        redirigir("http://10.162.130.164:7777")
-        
+if st.button("📄 PEMA", use_container_width=True):
+    redirigir("http://10.162.130.164:7777")
+    
 st.markdown("<br>", unsafe_allow_html=True)
 
-# 2. FACTUBAM (Derecha)
-col1_2, col_esp2, col2_2 = st.columns([1, 0.1, 1])
-with col2_2:
-    if st.button("🧾 FACTUBAM"):
-        redirigir("http://10.162.130.164:8502")
-        
+if st.button("🧾 FACTUBAM", use_container_width=True):
+    redirigir("http://10.162.130.164:8502")
+    
 st.markdown("<br>", unsafe_allow_html=True)
 
-# 3. INVENTARIO (Izquierda)
-col1_3, col_esp3, col2_3 = st.columns([1, 0.1, 1])
-with col1_3:
-    if st.button("📂 INVENTARIO"):
-        redirigir("http://10.162.130.164:8501")
+if st.button("📂 INVENTARIO", use_container_width=True):
+    redirigir("http://10.162.130.164:8501")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# 4. RPT (Derecha)
-col1_4, col_esp4, col2_4 = st.columns([1, 0.1, 1])
-with col2_4:
-    if st.button("📊 RPT (ADJUN)"):
-        redirigir("http://10.162.130.164:8503")
+if st.button("📊 RPT (ADJUN)", use_container_width=True):
+    redirigir("http://10.162.130.164:8503")
 
 # =====================================================
 # FOOTER
