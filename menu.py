@@ -64,7 +64,7 @@ cargar_estilos_css()
 try:
     c1, c2, c3 = st.columns([1, 2, 1]) # La columna central es más ancha para la imagen
     with c2:
-        st.image("diseño/ADA-vc-color (1).png", use_container_width=True)
+        st.image("diseño/ADA-vc-color (1).jpg", use_container_width=True)
 except Exception:
     # Si por algún motivo no encuentra la ruta exacta, muestra un aviso
     st.warning("No se pudo cargar la imagen. Comprueba que la ruta 'diseño/ADA-vc-color (1).png' es correcta.")
@@ -104,3 +104,4 @@ with col2:
 st.markdown("<br>", unsafe_allow_html=True)
 st.write("---")
 st.caption("Conectado al nodo Proxmox: 10.162.130.164")
+
