@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 # Se actualiza el icono de la página con la ruta exacta
 st.set_page_config(
     page_title="Consola de Gestión", 
-    page_icon="diseño/ada-icono (1).png",  # <--- Ruta del icono actualizada
+    page_icon="diseño/ada-icono (1).png",  
     layout="wide"
 )
 
@@ -79,29 +79,44 @@ def redirigir(url):
     js = f"window.open('{url}', '_blank')"
     components.html(f"<script>{js}</script>", height=0)
 
-# Crear cuadrícula para los botones (Añadido un pequeño espacio central para separar)
+# =====================================================
+# BOTONES EN FORMATO ESCALONADO (ZIG-ZAG)
+# =====================================================
 st.markdown("<br>", unsafe_allow_html=True)
-col1, col_espacio, col2 = st.columns([1, 0.1, 1])
 
-with col1:
+# 1. PEMA (Izquierda)
+col1_1, col_esp1, col2_1 = st.columns([1, 0.1, 1])
+with col1_1:
     if st.button("📄 PEMA"):
         redirigir("http://10.162.130.164:7777")
         
-    st.markdown("<br>", unsafe_allow_html=True) # Espacio vertical
-    
-    if st.button("📂 INVENTARIO"):
-        redirigir("http://10.162.130.164:8501")
+st.markdown("<br>", unsafe_allow_html=True)
 
-with col2:
+# 2. FACTUBAM (Derecha)
+col1_2, col_esp2, col2_2 = st.columns([1, 0.1, 1])
+with col2_2:
     if st.button("🧾 FACTUBAM"):
         redirigir("http://10.162.130.164:8502")
         
-    st.markdown("<br>", unsafe_allow_html=True) # Espacio vertical
-    
+st.markdown("<br>", unsafe_allow_html=True)
+
+# 3. INVENTARIO (Izquierda)
+col1_3, col_esp3, col2_3 = st.columns([1, 0.1, 1])
+with col1_3:
+    if st.button("📂 INVENTARIO"):
+        redirigir("http://10.162.130.164:8501")
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# 4. RPT (Derecha)
+col1_4, col_esp4, col2_4 = st.columns([1, 0.1, 1])
+with col2_4:
     if st.button("📊 RPT (ADJUN)"):
         redirigir("http://10.162.130.164:8503")
 
-st.markdown("<br>", unsafe_allow_html=True)
+# =====================================================
+# FOOTER
+# =====================================================
+st.markdown("<br><br>", unsafe_allow_html=True)
 st.write("---")
 st.caption("Conectado al nodo Proxmox: 10.162.130.164")
-
