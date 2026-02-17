@@ -35,7 +35,7 @@ def cargar_estilos_css():
     div.stButton > button:first-child {
         height: 150px !important;
         width: 100% !important;
-        font-size: 28px !important;
+        font-size: 45px !important; /* AUMENTADO PARA AJUSTARSE AL BOTÓN GRANDE */
         font-weight: bold !important;
         border-radius: 20px !important;
         background-color: var(--verde-junta) !important;
@@ -110,5 +110,3 @@ if st.button("📊 RPT ", use_container_width=True):
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.write("---")
 st.caption("Conectado al nodo Proxmox: 10.162.130.164")
-
-
