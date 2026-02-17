@@ -33,11 +33,11 @@ def cargar_estilos_css():
     
     /* Ajuste de botones del panel central: Centrados y alargados por toda la pantalla */
     div.stButton > button:first-child {
-        height: 100px !important;  /* TAMAÑO AJUSTADO: Más equilibrado */
+        height: 60px !important;    /* TAMAÑO REDUCIDO: Más elegante */
         width: 100% !important;
-        font-size: 28px !important; /* TEXTO AJUSTADO: Proporcional al botón */
+        font-size: 20px !important; /* TEXTO REDUCIDO: Proporcional */
         font-weight: bold !important;
-        border-radius: 20px !important;
+        border-radius: 15px !important; /* Bordes un poco menos redondos para este tamaño */
         background-color: var(--verde-junta) !important;
         color: white !important;
         transition: 0.3s !important;
